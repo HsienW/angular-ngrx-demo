@@ -9,6 +9,15 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 
+const ngrxReducerConfig = {
+  runtimeChecks: {
+    strictStateImmutability: true,
+    strictActionImmutability: true,
+    strictStateSerializability: true,
+    strictActionSerializability: true,
+  }
+};
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,9 +25,8 @@ import {AppComponent} from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({}, ngrxReducerConfig),
     TodoModule,
-    EffectsModule.forRoot([ToDoEffects]),
     HttpClientModule
   ],
   providers: [],

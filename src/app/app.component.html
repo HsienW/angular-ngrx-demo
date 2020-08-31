@@ -1,4 +1,4 @@
-<div class="Container">
+<div>
   <h2>My wishlists:</h2>
 
   <div *ngIf="todoError?.message">
@@ -7,52 +7,14 @@
     </div>
   </div>
 
-  <div *ngFor="let todo of ToDoData" class="ToDoList">
-    <div class="row">
-      <div class="col-md-2">Name:</div>
-      <div class="col-md-2 todoItem">{{ todo.title }}</div>
-      <div class="col-md-2">IsCompleted:</div>
-      <div class="col-md-2 todoItem">{{ todo.isCompleted }}</div>
+  <div *ngIf="(toDoListIsLoad | async)">
+    <div *ngFor="let todoItem of toDoListIsLoad | async" class="ToDoList">
+      <div class="row">
+        <div class="col-md-2">Name:</div>
+        <div class="col-md-2 todoItem">{{ todoItem.title }}</div>
+        <div class="col-md-2">IsCompleted:</div>
+        <div class="col-md-2 todoItem">{{ todoItem.isCompleted }}</div>
+      </div>
     </div>
   </div>
 </div>
-
-<hr/>
-
-<!--<div class="container form-group" style="margin: 10px;">-->
-<!--  <h3>Create New Wishlist</h3>-->
-<!--  <form (ngSubmit)="createToDo()">-->
-<!--    <div class="row">-->
-<!--      <div class="form-group col-md-4">-->
-<!--        <input-->
-<!--          [(ngModel)]="Title"-->
-<!--          placeholder="Enter your Wish"-->
-<!--          class="form-control"-->
-<!--          name="Title"-->
-<!--          style="min-width: 150px;"-->
-<!--        />-->
-<!--      </div>-->
-
-<!--      <div-->
-<!--        class="col-md-2 form-check"-->
-<!--        style="margin-top: 10px; margin-left: 30px;"-->
-<!--      >-->
-<!--        <input-->
-<!--          type="checkbox"-->
-<!--          class="form-check-input"-->
-<!--          id="IsCompleted"-->
-<!--          name="IsCompleted"-->
-<!--          [(ngModel)]="IsCompleted"-->
-<!--        />-->
-
-<!--        <label for="IsCompleted" class="form-check-label">Completed?</label>-->
-<!--      </div>-->
-
-<!--      <div class="col-md-2">-->
-<!--        <button type="submit" class="btn btn-primary" style="Width:70px;">-->
-<!--          Add-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </form>-->
-<!--</div>-->

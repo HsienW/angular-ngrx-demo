@@ -23,7 +23,7 @@ export const GetToDoStart = createAction(
 
 export const GetToDoSuccess = createAction(
   '[ToDo/API] Get-ToDo-Success',
-  props<{ payload: ToDoAPIRespond }>()
+  props<{ status: number; body: ToDoItem[]; }>()
 );
 
 export const GetToDoFail = createAction(

@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-8-starter-kit:build"
+            "browserTarget": "angular-ngrx-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-8-starter-kit:build:production"
+              "browserTarget": "angular-ngrx-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-8-starter-kit:build"
+            "browserTarget": "angular-ngrx-demo:build"
           }
         },
         "test": {
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-8-starter-kit:serve"
+            "devServerTarget": "angular-ngrx-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-8-starter-kit:serve:production"
+              "devServerTarget": "angular-ngrx-demo:serve:production"
             }
           }
         }

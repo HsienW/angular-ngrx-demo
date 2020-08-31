@@ -5,8 +5,8 @@ export interface ToDoItem {
 }
 
 export interface ToDoAPIRespond {
-  state: number;
-  items: ToDoItem[];
+  status: number;
+  body: ToDoItem[];
 }
 
 /** 新增的 TodoItem **/

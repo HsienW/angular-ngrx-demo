@@ -1,7 +1,7 @@
 import {Action, createReducer, on} from '@ngrx/store';
-// import {CreateToDoItemAPIRespond} from './todo-model';
-import {initializeState, ToDoRootState, ToDoAPIRespond, CreateToDoItemAPIRespond} from './todo-state';
+import {initializeState, ToDoRootState} from './todo-state';
 import * as ToDoActions from './todo-actions';
+
 export const todoFeatureKey = 'todos';
 
 const reducer = createReducer(
@@ -14,7 +14,7 @@ const reducer = createReducer(
     return {...state, ToDoError: error};
   }),
 
-  on(ToDoActions.GetToDoSuccess, (state: ToDoRootState, {payload}) => {
+  on(ToDoActions.GetToDoSuccess, (state: ToDoRootState, {...payload}) => {
     return {...state, ToDoAPIRespond: payload, ToDoError: null};
   }),
 
